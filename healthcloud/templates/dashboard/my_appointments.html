@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-conten padding-y bg">
+
+    <div class="container">
+        <div class="row">
+        <aside class="col-md-3">
+            <!--   SIDEBAR   -->
+            <ul class="list-group">
+                <a class="list-group-item " href="{% url 'dashboard_pacient' %}"> My Profile </a>
+                <a class="list-group-item " href="{% url 'my_appointments' %}"> My Appointments </a>
+                <a class="list-group-item" href="#"> My Diagnoses </a>
+                <a class="list-group-item" href="{% url 'reports_pacient' %}"> Lab Reports </a>
+                <a class="list-group-item" href="#">Radiography </a>
+                <a class="list-group-item" href="#"> Symptom Tracker </a>
+                <a class="list-group-item" href="#"> Health Goals </a>
+                <a class="list-group-item" href="#"> Health Education </a>
+                <a class="list-group-item" href="#"> Statistics </a>
+                <a class="list-group-item" href="{% url 'edit_profile' %}"> Settings </a>
+            </ul>
+            <br>
+            <a class="btn btn-light btn-block" href="{% url 'logout_pacient' %}"> <i class="fa fa-power-off"></i> <span class="text">Log out</span> </a> 
+            <!--   SIDEBAR .//END   -->
+        </aside>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">View Appointments</h3>
+                    <p>Hello, <span style="color: rgb(37, 104, 249)">{{ pacient_name }}</span>. Here are all your appointments:</p>
+            </div>
+            <div class="appointment-details" style="display: flex; flex-wrap: wrap; margin-top: 10px; margin-left:55px">
+                <div class="col-md-2">
+
+                <p style="flex-basis: 20%;"><strong>Day</strong> </p></div>
+                <div class="col-md-2">
+
+                <p style="flex-basis: 20%;"><strong>Time</strong> </p></div>
+                <div class="col-md-2">
+
+                <p style="flex-basis: 20%;"><strong>Doctor</strong> </p></div>
+                <div class="col-md-2">
+
+                <p style="flex-basis: 20%;"><strong>Department</strong> </p></div>
+                <div class="col-md-2">
+
+                <p style="flex-basis: 20%;"><strong>Actions</strong> </p></div>
+
+
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="appointment-details" style="display: flex; flex-direction: column;margin-top: 10px; margin-left:35px">
+                        <div class="row">
+                            <div class="col-md-2">
+                    {% for day in request.session.appointment_day %}
+
+                    
+                    <p style="flex-basis: 20%;">{{day}} </p>
+                    {% endfor %}
+                </div>
+                <div class="col-md-2">
+
+                    {% for time in request.session.appointment_time %}
+                    <p style="flex-basis: 20%;">{{time}} </p>
+                    {% endfor %}
+                </div>
+
+                <div class="col-md-2">
+
+                    {% for doctor in request.session.appointment_doctor %}
+
+                    <p style="flex-basis: 20%;">{{doctor}} </p>
+                    {% endfor %}
+                </div>
+                <div class="col-md-2">
+
+                    {% for department in request.session.appointment_department %}
+                    <p style="flex-basis: 20%;">{{department}} </p>
+
+                    {% endfor %}
+                </div>
+
+                <div class="col-md-2">
+
+                    {% for number in numbers %}
+                    <p style="flex-basis: 20%;"><a href="{% url 'reports_pacient' %}">View Reports</a></p>
+
+                    {% endfor %}
+                </div>
+
+                    </div>
+            </div>
+
+            
+        </div>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+</section>
+    </div> <!-- row.// -->
+    </div>
+    
+    
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+    <style>
+        .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+      
+
+    </style>
+
+{% endblock %}

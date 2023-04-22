@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y-sm">
+    <div class="container">
+    
+    <header class="section-heading">
+        <h3 class="section-title">Our Services</h3>
+    </header><!-- sect-heading -->
+    
+        
+    <div class="row justify-content-center">
+        
+        <div class="col-md-3 text-center">
+
+            <div class="icon">
+                <img src="{% static 'images/items/x-ray.png' %}" width="181" height="180">
+
+            </div>
+
+            <h4 style="margin-top:25px">Medical Record Analysis</h4>
+            <p style="text-align:center">The applicability of AI guides us
+                through the meaning of data in medical imaging, such as X-rays, EHRs, etc.</p>
+
+
+
+        </div>
+
+        <div class="col-md-3 text-center">
+
+            <div class="icon">
+                <img src="{% static 'images/items/heart-problem.png' %}" width="181" height="180">
+
+            </div>
+
+            <h4 style="margin-top:25px">Disease Prediction</h4>
+            <p style="text-align:center">We act promptly with the help of
+                a technology called Amazon SageMaker, which is used 
+                for a quicker patient diagnosis.</p>
+
+            
+        </div>
+
+
+        <div class="col-md-3 text-center">
+            
+
+            <div class="icon">
+                <img src="{% static 'images/items/dataa.png' %}" width="181" height="180">
+
+            </div>
+
+                <h4 style="margin-top:25px">Data Visualization</h4>
+                <p style="text-align:center">By analyzing  patient data sets, 
+                    we offer the client a more accurate and faster representation of insights 
+                    related to their health state.</p>
+
+
+        </div>
+      
+      
+    </div> <!-- row.// -->
+    
+    </div><!-- container // -->
+    </section>
+    <!-- ========================= SECTION  END// ========================= -->
+    
+
+{% endblock %}
+
+

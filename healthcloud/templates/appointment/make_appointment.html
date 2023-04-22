@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h4 style="margin-top: 40px; margin-left: 200px;">Welcome to our clinic!</h4>
+<p style="margin-left: 200px;"> You can schedule an appointment with us either by  <a href="{% url 'register_pacient' %}">creating an account</a>.</p>
+<p style="margin-left: 200px;"> Or, if you 
+    already have an account, please <a href="{% url 'login_pacient' %}">log in </a>to schedule your appointment. </p>
+    <p style="margin-left: 200px;">We look forward to assisting you with your healthcare needs.</p>
+
+    <div class="container" style="margin-left: 190px;">
+      <form action="{% url 'make_appointment' %}" style="width:600px; height:600.2px;"  method = "POST">
+        {% csrf_token %}
+        <label for="fname" >First Name</label>
+          {{form.first_name}}
+        <label for="lname">Last Name</label>
+        {{form.last_name}}
+
+        <label for="lname">Username</label>
+        {{form.username}}
+
+        <label for="department">Department</label>
+        {{form.department}}
+
+
+
+ 
+
+        <label for="time">Day</label>
+        {{form.day}}
+
+        <label for="time">Time</label>
+        {{form.time}}
+
+        
+        <button type="submit" class="btn btn-primary btn-block" style="margin-bottom:15px"> Book Appointment  </button>
+        
+        {% include 'includes/alerts.html' %}
+
+      </form>
+   
+      
+    </div>
+    
+
+
+
+
+</div>
+
+
+  
+
+<style>
+
+
+    
+    
+    
+    input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+    
+    input[type=submit] {
+      background-color: #2c8ee4;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #0f1ebd;
+    }
+    
+    .container {
+      border-radius: 5px;
+      background-color: white;
+      align-items: center;
+      display: flex;
+			flex-wrap: wrap;
+
+      
+    }
+
+
+   
+    </style>
+
+
+
+
+{% endblock %}

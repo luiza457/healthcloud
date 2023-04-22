@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid  d-flex flex-column">
+	
+	<div class="flex-grow-1">
+		
+		<div class="container containerr " margin="auto">
+		
+			<img src="{% static '../static/images/banners/ste.jpg' %}" width="700px" height="400px">
+			<a href="{% url 'services' %}" class="btn btn-primary  mr-4" style="margin-left: 80px; margin-top: 70px;">See our Services</a>
+			<a href="{% url 'make_appointment' %}" class="btn btn-secondary " style="margin-top: 70px;" >Make Appointment</a>
+		</div>
+	</div>
+	</div>	
+	
+
+	
+	
+
+
+
+
+
+</body>
+</html>
+
+{% endblock %}
+

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-conten padding-y bg">
+
+    <div class="container">
+        <div class="row">
+        <aside class="col-md-3">
+            <!--   SIDEBAR   -->
+            <ul class="list-group">
+                <a class="list-group-item " href="{% url 'dashboard_pacient' %}"> My Profile </a>
+                <a class="list-group-item " href="{% url 'my_appointments' %}"> My Appointments </a>
+                <a class="list-group-item" href="#"> My Diagnoses </a>
+                <a class="list-group-item" href="{% url 'reports_pacient' %}"> Lab Reports </a>
+                <a class="list-group-item" href="#">Radiography </a>
+                <a class="list-group-item" href="#"> Symptom Tracker </a>
+                <a class="list-group-item" href="#"> Health Goals </a>
+                <a class="list-group-item" href="#"> Health Education </a>
+                <a class="list-group-item" href="#"> Statistics </a>
+                <a class="list-group-item" href="{% url 'edit_profile' %}"> Settings </a>
+            </ul>
+            <br>
+            <a class="btn btn-light btn-block" href="{% url 'logout_pacient' %}"> <i class="fa fa-power-off"></i> <span class="text">Log out</span> </a> 
+            <!--   SIDEBAR .//END   -->
+        </aside>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body" style="margin-left: 9px;">
+                    <h3>Hello, <span style="color: rgb(37, 104, 249)">{{ pacient_name }}</span></h3> 
+                    <p>Enjoy your day and don't forget to take care of your health!</p>
+                </div>
+
+                <div class="card-body profile">
+                    <h3 style="margin-left: 9px;">My Profile</h3> 
+                    <div class="card">
+                        
+                        <div class ="info" style="margin-left: 20px;">
+                        <p style="margin-top: 5px;">Here is your user profile information:</p>
+
+                        <p><strong>Name:</strong> {{pacient_name}} {{pacient_last_name}}</p>
+                        <p><strong>Username:</strong> {{pacient_username}}</p>
+                        <p><strong>Email:</strong> {{ pacient_email }}</p>
+                        <p><strong>Phone:</strong> {{ pacient_phone_number }}</p>
+                        
+
+                        <p><strong><a href="{% url 'edit_profile' %}">Edit Profile</a></strong></p>
+                    </div>
+                    <img src="{% static '/images/profile.png' %}" width="500" height="600">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+    </div> <!-- row.// -->
+    </div>
+    
+    
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+    <style>
+        .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+    </style>
+
+{% endblock %}
