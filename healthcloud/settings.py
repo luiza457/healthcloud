@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lz%b*p-+#gjk-(j+jq@u1fg7mpubbyvdyxt)6_hh(r@cafp=we'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['master.d10uqq88crx792.amplifyapp.com']
 
