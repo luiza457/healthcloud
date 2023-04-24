@@ -16,7 +16,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['master.do9a9bc9cdwd.amplifyapp.com']
 
-SECURE_SSL_REDIRECT = True
+
 
 # Application definition
 
